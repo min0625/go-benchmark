@@ -99,3 +99,17 @@ Benchmark_Slice_IndexAssign-8           1000000000               1.113 ns/op    
 PASS
 ok      command-line-arguments  6.953s
 ```
+
+## string concatenation
+```sh
+$ go test -run=none -bench=. -v -test.v -benchmem string_concatenation_test.go
+goos: windows
+goarch: amd64
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+Benchmark_StringConcatenation_WithBuilder
+Benchmark_StringConcatenation_WithBuilder-8             13478571                83.73 ns/op          340 B/op          0 allocs/op
+Benchmark_StringConcatenation_WithPlusOperator
+Benchmark_StringConcatenation_WithPlusOperator-8           36211            190210 ns/op         1126625 B/op          1 allocs/op
+PASS
+ok      command-line-arguments  8.490s
+```
